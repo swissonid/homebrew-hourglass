@@ -3,7 +3,6 @@
 class Hourglass < Formula
   desc "Working-hours, absence and Swiss-public-holiday tracking"
   homepage "https://github.com/swissonid/homebrew-hourglass"
-  version "0.1.1"
   license "BUSL-1.1"
 
   on_macos do
