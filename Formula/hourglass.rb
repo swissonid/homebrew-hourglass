@@ -5,6 +5,9 @@ class Hourglass < Formula
   homepage "https://github.com/swissonid/homebrew-hourglass"
   license "BUSL-1.1"
 
+  # No `version` stanza: brew reads it out of the URL, and two places to state
+  # one number is one place for them to disagree.
+
   on_macos do
     on_arm do
       url "https://github.com/swissonid/homebrew-hourglass/releases/download/v0.1.1/hourglass-0.1.1-aarch64-apple-darwin.tar.gz"
@@ -28,8 +31,9 @@ class Hourglass < Formula
   end
 
   test do
-    # The binary knows the tag it was built from, so this checks the download
-    # matched the formula rather than merely that something executable landed.
+    # The binary knows the tag it was built from, so this checks that the
+    # download matched the formula rather than merely that something
+    # executable landed.
     assert_match "hourglass #{version}", shell_output("#{bin}/hourglass --version")
   end
 end
